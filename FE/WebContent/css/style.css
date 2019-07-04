@@ -1,0 +1,54 @@
+.mouse-hand {
+	cursor: pointer;
+}
+
+.robobank-header {
+    font-style: normal;
+    border-bottom: 1px solid #ddddd8;
+    padding-bottom: 8px;
+    color: rgba(0,0,0,.85);
+    margin-top: 2.25rem;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+}
+
+.upload-button {
+    margin: 10px 64px;
+    float: left;
+}
+
+.input-file {
+	font-weight: 400 !important;
+	line-height: 1.2;
+    word-spacing: -.05em;
+    font-weight: 300;
+    font-style: normal;
+    color: #ba3925;
+    text-rendering: optimizeLegibility;
+    margin-top: 0.5em;
+    margin-bottom: .5em;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+#footer {
+    max-width: 100%;
+    background-color: rgba(0,0,0,.8);
+    padding: 1.25em;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+#footer-text {
+    color: rgba(255,255,255,.8);
+    line-height: 1.44;
+}
+
+.note {
+	float: right;
+    font-weight: 200;
+    color: #ba392b;
+    font-family: sans-serif;
+}

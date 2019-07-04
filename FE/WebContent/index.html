@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View CSV data</title>
+<script type="text/javascript" src="lib/angular.min.js"></script>
+<script type="text/javascript" src="lib/ng-file-upload.min.js"></script>
+<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<link rel="stylesheet" href="lib/bootstrap.min.css">
+<script src="csvapp.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div ng-app="csvApp" ng-controller="csvController">
+		<div class="col-md-12 text-center">
+			<h1 class="robobank-header">Robobank Customer Issue Count Report</h1>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="input-file">
+						<span>Upload File</span>
+					</h2>
+					<div style="margin: 10px;">
+						<input type="file" ngf-select="SelectFile($file)" ngf-accept="'.csv'" />
+						<input type="button" value="Upload" ng-click="Upload()" />
+					</div>
+					
+					<div class="upload-button">
+						
+					</div>
+		   		 	
+				</div>
+				 
+			    <hr />
+			    <div class="col-md-2">
+			    </div>
+			    <div class="col-md-8 col-md-offset-2">
+			    
+			    	<div ng-if="Customers">
+			    		<h2  class="input-file">
+			    			<span>Customer Report</span>
+			    		</h2>
+			    		
+			    		<table id="tblCustomers" class="table table-bordered table-striped" cellpadding="0" cellspacing="0" ng-show="IsVisible">
+					    	<thead>
+						        <tr>
+						            <th ng-repeat="header in headers" ng-class="{'mouse-hand' : header === 'Issue count'}" ng-click="sortissueCount(header);">{{header}}</th>
+						        </tr>
+					        </thead>
+					        <tbody>
+					            <tr  ng-repeat="customer in Customers | orderBy:orderbyissue:reverse">
+					                <td>{{customer.firstName}}</td>
+					                <td>{{customer.surName}}</td>
+					                <td>{{customer.issueCount}}</td>
+					                <td>{{customer.dob}}</td>
+					            </tr>
+					        </tbody>
+					    </table>
+					    
+					    <span class="note">Note: Click on Issue Count header to sort the count.</span>
+			    	</div>
+			    	
+			    </div>
+			</div>
+			
+		</div>
+		
+		<div id="footer">
+			<div id="footer-text">
+				Last updated 2019-07-04 13:50:00 IST
+			</div>
+		</div>
+		
+	   
+	</div>
+</body>
+</html>
